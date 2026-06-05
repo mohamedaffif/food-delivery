@@ -1,8 +1,9 @@
 import express from 'express';
-import { placeOrder } from '../controllers/order.controller.js';
+import { getOrderStatus, placeOrder } from '../controllers/order.controller.js';
 
 const router = express.Router();
 
 router.post('/', placeOrder);
+router.get('/status/:id', getOrderStatus);
 
 export default router;
